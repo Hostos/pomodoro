@@ -5,25 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro Timer</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>Pomodoro Timer</h1>
-        <div class="themes">
-            <button id="bootybutt" class="theme-btn active">Booty-Butt</button>
-            <button id="lamosca" class="theme-btn">La Mosca</button>
+        <div class="header">
+            <h1>Pomodoro</h1>
+            <button id="modeToggle" class="round-mode"><i class="fas fa-coffee"></i></button>
         </div>
         <div class="timer">
             <span id="minutes">20</span>:<span id="seconds">00</span>
         </div>
         <div class="controls">
-            <button id="start">Start</button>
-            <button id="pause">Pause</button>
-            <button id="reset">Reset</button>
+            <button id="startPause"><i class="fas fa-play"></i></button>
+            <button id="reset"><i class="fas fa-rotate"></i></button>
         </div>
-        <div class="mode">
-            <button id="work" class="active">Work</button>
-            <button id="break">Break</button>
+        <div class="task-section">
+            <input type="text" id="taskInput" placeholder="What are you working on?" maxlength="50">
+            <p id="currentTask" class="task-display"></p>
         </div>
     </div>
     <script src="script.js"></script>

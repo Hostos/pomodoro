@@ -4,49 +4,17 @@
     box-sizing: border-box;
 }
 
-/* Booty-Butt Theme (Knicks Colors) */
-.bootybutt-theme {
-    --primary: #006BB6;         /* Knicks Blue */
-    --primary-dark: #004d8c;    /* Darker Blue */
-    --success: #F58426;         /* Knicks Orange */
-    --danger: #BEC0C2;          /* Knicks Silver */
-    --break: #006BB6;           /* Knicks Blue for break */
-    --text: #000000;           /* Black */
-    --bg: #F3F4F5;             /* Light Gray background */
-    --container-bg: #ffffff;    /* White container */
-    --white: #ffffff;          /* Pure white */
-    --shadow: rgba(0, 0, 0, 0.2);  /* Subtle shadow */
-    --orange-hover: #ff9642;    /* Brighter orange for hover */
-}
-
-/* La Mosca Theme (Purple and Pink) */
-.lamosca-theme {
-    --primary: #9C27B0;         /* Purple */
-    --primary-dark: #7B1FA2;    /* Darker Purple */
-    --success: #E91E63;         /* Pink */
-    --danger: #FF80AB;          /* Light Pink */
-    --break: #BA68C8;          /* Light Purple */
-    --text: #4A148C;           /* Dark Purple */
-    --bg: #F3E5F5;             /* Light Purple background */
-    --container-bg: #ffffff;    /* White container */
-    --white: #ffffff;          /* Pure white */
-    --shadow: rgba(156, 39, 176, 0.2);  /* Purple shadow */
-    --orange-hover: #FF4081;    /* Bright Pink hover */
-}
-
-/* Default theme (Booty-Butt) */
 :root {
-    --primary: #006BB6;         /* Default to Booty-Butt theme */
-    --primary-dark: #004d8c;
-    --success: #F58426;
-    --danger: #BEC0C2;
-    --break: #006BB6;
-    --text: #000000;
-    --bg: #F3F4F5;
-    --container-bg: #ffffff;
-    --white: #ffffff;
-    --shadow: rgba(0, 0, 0, 0.2);
-    --orange-hover: #ff9642;
+    --primary: #2D3436;         /* Dark gray for text */
+    --secondary: #636E72;       /* Medium gray for secondary elements */
+    --accent: #00B894;         /* Mint green for accents */
+    --danger: #FF7675;         /* Soft red for danger/reset */
+    --text: #2D3436;           /* Dark gray for text */
+    --bg: #F5F6FA;             /* Light gray background */
+    --container-bg: #FFFFFF;    /* White container */
+    --shadow: rgba(45, 52, 54, 0.1);  /* Subtle shadow */
+    --work-mode: #00B894;      /* Mint green for work mode */
+    --break-mode: #FDCB6E;     /* Soft yellow for break mode */
 }
 
 body {
@@ -57,59 +25,59 @@ body {
     align-items: center;
     min-height: 100vh;
     color: var(--text);
-    transition: background-color 0.3s ease;
 }
 
 .container {
     background-color: var(--container-bg);
     padding: 2.5rem;
     border-radius: 1.5rem;
-    box-shadow: 0 10px 25px var(--shadow);
+    box-shadow: 0 10px 30px var(--shadow);
     text-align: center;
     width: 90%;
     max-width: 400px;
-    transition: transform 0.3s ease;
-    border: 3px solid var(--primary);  /* Blue border */
+    transition: all 0.3s ease;
 }
 
-.container:hover {
-    transform: translateY(-5px);
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
 h1 {
     color: var(--primary);
-    margin-bottom: 2rem;
     font-size: 1.8rem;
-    font-weight: 700;
+    font-weight: 600;
+    margin: 0;
 }
 
 .timer {
     font-size: 6rem;
-    font-weight: 700;
-    color: var(--success);      /* Orange timer */
+    font-weight: 200;
+    color: var(--primary);
     margin: 2rem 0;
     font-variant-numeric: tabular-nums;
     letter-spacing: -2px;
-    text-shadow: 2px 2px 10px var(--shadow);
 }
 
-.controls, .mode {
+.controls {
     display: flex;
-    gap: 0.75rem;
+    gap: 1rem;
     justify-content: center;
     margin: 1.5rem 0;
 }
 
 button {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 500;
     padding: 0.75rem 1.5rem;
     border: none;
-    border-radius: 0.25rem;
+    border-radius: 0.75rem;
     cursor: pointer;
     transition: all 0.2s ease;
-    background-color: var(--primary);
-    color: var(--white);
+    background-color: var(--accent);
+    color: white;
     position: relative;
     overflow: hidden;
 }
@@ -117,8 +85,7 @@ button {
 button:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px var(--shadow);
-    background-color: var(--primary-dark);
-    filter: brightness(120%);
+    filter: brightness(105%);
 }
 
 button:active {
@@ -130,47 +97,82 @@ button:active {
     max-width: 120px;
 }
 
-.mode button {
-    background-color: var(--bg);
-    color: var(--text);
-    padding: 0.5rem 1rem;
-    border: 2px solid var(--primary);
+.round-mode {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--work-mode);
+    border: none;
 }
 
-.mode button.active {
-    background-color: var(--primary);
-    color: var(--white);
+.round-mode i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
 }
 
-#pause {
-    background-color: var(--success);
+.round-mode:hover i {
+    transform: scale(1.2);
 }
 
-#pause:hover {
-    background-color: var(--orange-hover);
+#startPause {
+    background-color: var(--accent);
+}
+
+#startPause.running {
+    background-color: var(--secondary);
 }
 
 #reset {
     background-color: var(--danger);
 }
 
-#reset:hover {
-    background-color: var(--danger);
-    filter: brightness(90%);
+#modeToggle {
+    background-color: var(--work-mode);
 }
 
-#break {
+#modeToggle.break {
+    background-color: var(--break-mode);
+}
+
+.task-section {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+#taskInput {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--bg);
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    color: var(--primary);
     background-color: var(--bg);
 }
 
-#break.active {
-    background-color: var(--success);
-    color: var(--white);
+#taskInput:focus {
+    outline: none;
+    border-color: var(--accent);
+    background-color: white;
 }
 
-#break:hover {
-    background-color: var(--success);
-    filter: brightness(120%);
+#taskInput::placeholder {
+    color: var(--secondary);
+}
+
+.task-display {
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 0.5rem 0;
+    min-height: 2.5rem;
+    word-wrap: break-word;
+    font-weight: 500;
 }
 
 @media (max-width: 480px) {
@@ -186,55 +188,9 @@ button:active {
     button {
         padding: 0.6rem 1.2rem;
     }
-}
 
-/* Add styles for theme buttons */
-.themes {
-    display: flex;
-    gap: 0.75rem;
-    justify-content: center;
-    margin: 1rem 0 2rem 0;
-}
-
-.theme-btn {
-    font-size: 0.9rem;
-    padding: 0.5rem 1.5rem;
-    border: none;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-/* Booty-Butt theme button */
-#bootybutt {
-    background-color: #006BB6;  /* Knicks Blue */
-    color: white;
-    border: 2px solid #006BB6;
-}
-
-#bootybutt:hover {
-    background-color: #004d8c;
-    border-color: #004d8c;
-}
-
-#bootybutt.active {
-    background-color: #F58426;  /* Knicks Orange */
-    border-color: #F58426;
-}
-
-/* La Mosca theme button */
-#lamosca {
-    background-color: #9C27B0;  /* Purple */
-    color: white;
-    border: 2px solid #9C27B0;
-}
-
-#lamosca:hover {
-    background-color: #7B1FA2;
-    border-color: #7B1FA2;
-}
-
-#lamosca.active {
-    background-color: #E91E63;  /* Pink */
-    border-color: #E91E63;
+    .round-mode {
+        width: 40px;
+        height: 40px;
+    }
 }
