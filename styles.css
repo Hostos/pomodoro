@@ -5,7 +5,7 @@
 }
 
 /* Booty-Butt Theme (Knicks Colors) */
-.hostos-theme {
+.bootybutt-theme {
     --primary: #006BB6;         /* Knicks Blue */
     --primary-dark: #004d8c;    /* Darker Blue */
     --success: #F58426;         /* Knicks Orange */
@@ -20,7 +20,7 @@
 }
 
 /* La Mosca Theme (Purple and Pink) */
-.olympia-theme {
+.lamosca-theme {
     --primary: #9C27B0;         /* Purple */
     --primary-dark: #7B1FA2;    /* Darker Purple */
     --success: #E91E63;         /* Pink */
@@ -205,36 +205,36 @@ button:active {
     transition: all 0.2s ease;
 }
 
-/* Hostos theme button */
-#hostos {
+/* Booty-Butt theme button */
+#bootybutt {
     background-color: #006BB6;  /* Knicks Blue */
     color: white;
     border: 2px solid #006BB6;
 }
 
-#hostos:hover {
+#bootybutt:hover {
     background-color: #004d8c;
     border-color: #004d8c;
 }
 
-#hostos.active {
+#bootybutt.active {
     background-color: #F58426;  /* Knicks Orange */
     border-color: #F58426;
 }
 
-/* Olympia theme button */
-#olympia {
+/* La Mosca theme button */
+#lamosca {
     background-color: #9C27B0;  /* Purple */
     color: white;
     border: 2px solid #9C27B0;
 }
 
-#olympia:hover {
+#lamosca:hover {
     background-color: #7B1FA2;
     border-color: #7B1FA2;
 }
 
-#olympia.active {
+#lamosca.active {
     background-color: #E91E63;  /* Pink */
     border-color: #E91E63;
 }

@@ -15,8 +15,8 @@ class PomodoroTimer {
         this.resetButton = document.getElementById('reset');
         this.workButton = document.getElementById('work');
         this.breakButton = document.getElementById('break');
-        this.bootybuttButton = document.getElementById('hostos');    // Booty-Butt theme button
-        this.lamoscaButton = document.getElementById('olympia');     // La Mosca theme button
+        this.bootybuttButton = document.getElementById('bootybutt');
+        this.lamoscaButton = document.getElementById('lamosca');
 
         // Event listeners
         this.startButton.addEventListener('click', () => this.start());
@@ -24,12 +24,12 @@ class PomodoroTimer {
         this.resetButton.addEventListener('click', () => this.reset());
         this.workButton.addEventListener('click', () => this.setWorkMode());
         this.breakButton.addEventListener('click', () => this.setBreakMode());
-        this.bootybuttButton.addEventListener('click', () => this.setTheme('hostos'));    // Booty-Butt theme
-        this.lamoscaButton.addEventListener('click', () => this.setTheme('olympia'));     // La Mosca theme
+        this.bootybuttButton.addEventListener('click', () => this.setTheme('bootybutt'));
+        this.lamoscaButton.addEventListener('click', () => this.setTheme('lamosca'));
 
         // Initialize display and theme
         this.updateDisplay();
-        this.setTheme('hostos'); // Start with Booty-Butt theme
+        this.setTheme('bootybutt'); // Start with Booty-Butt theme
     }
 
     updateDisplay() {
@@ -104,14 +104,14 @@ class PomodoroTimer {
 
     setTheme(theme) {
         // Remove all theme classes
-        document.body.classList.remove('hostos-theme', 'olympia-theme');
+        document.body.classList.remove('bootybutt-theme', 'lamosca-theme');
         
         // Add the selected theme class
         document.body.classList.add(`${theme}-theme`);
         
         // Update active states of theme buttons
-        this.bootybuttButton.classList.toggle('active', theme === 'hostos');
-        this.lamoscaButton.classList.toggle('active', theme === 'olympia');
+        this.bootybuttButton.classList.toggle('active', theme === 'bootybutt');
+        this.lamoscaButton.classList.toggle('active', theme === 'lamosca');
     }
 }
 
